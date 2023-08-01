@@ -3,28 +3,36 @@ right = []
 wrong = []
 letter = ''
 word = 'azul'
-ATTEMPTS = 6
+ATTEMPTS = 5
+
+def win_condition():
+    if letter == word:
+        return True
+
+    if len(right) == len(word):
+        return True
+
+
+
 while True:
     letter = str(input('Type a letter: '))
 
-    if letter == word:
+    victory = win_condition()
+    if victory:
         print('You won!')
         break
+
+        
+    if ATTEMPTS == len(wrong):
+        print('You lose!')
+        break
+
 
     if letter in word:
         right.append(letter)
     else:
         wrong.append(letter)
     
-    if ATTEMPTS == len(wrong):
-        print('You lose!')
-        break
-
-    if len(right) == len(word):
-        print('You won!')
-        break
 
     print('right: ', right)
     print('wrong: ', wrong)
-
-    
