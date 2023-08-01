@@ -39,12 +39,15 @@ def is_duplicated(letter):
         return True
     return False
 
+
 def is_special_character(letter):
     special_characters = "!@#$%^&*()-+?_=,<>/"
     if any(char in special_characters for char in letter):
         return True
     else:
         return False
+
+
 
 while True:
     victory = win_condition()
@@ -56,7 +59,11 @@ while True:
         print('You lose!')
         break
 
-    letter = input('Type a letter / Word: ')
+    letter = input('Type a letter / Word: ').strip()
+
+    if not letter:
+        print('Spaces are not alowed! Please type again')
+        continue
 
     check_double_letter = is_duplicated(letter)
     if check_double_letter:
