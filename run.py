@@ -1,11 +1,15 @@
+from data import metal_bands
+import random
 
 right = []
 wrong = []
 letter = ''
-word = 'azul'
 ATTEMPTS = 5
 
-def win_condition():
+def get_random_value(list_values):
+    return random.choice(list_values)
+
+def win_condition(word):
     """
     Function to check the win condition
     """
@@ -50,13 +54,15 @@ def is_special_character(letter):
 
 
 while True:
-    victory = win_condition()
+    word = get_random_value(metal_bands)
+
+    victory = win_condition(word)
     if victory:
-        print('You won!')
+        print('You won!', f"Do you like {word}?")
         break
         
     if ATTEMPTS == len(wrong):
-        print('You lose!')
+        print('You lose!', f"The band is {word}")
         break
 
     letter = input('Type a letter / Word: ').strip()
