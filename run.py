@@ -6,6 +6,9 @@ word = 'azul'
 ATTEMPTS = 5
 
 def win_condition():
+    """
+    Function to check the win condition
+    """
     if letter == word:
         return True
 
