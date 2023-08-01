@@ -15,6 +15,7 @@ def win_condition():
     if len(right) == len(word):
         return True
 
+
 def is_letter(letter):
     """
     Function to validate input is a letter
@@ -28,13 +29,15 @@ def is_letter(letter):
         return True
 
 
-while True:
-    letter = input('Type a letter / Word: ')
 
+while True:
     victory = win_condition()
     if victory:
         print('You won!')
         break
+    
+    letter = input('Type a letter / Word: ')
+
 
     check_letter = is_letter(letter)
     if not check_letter and len(letter) == 1:
