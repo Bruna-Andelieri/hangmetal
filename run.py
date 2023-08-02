@@ -1,107 +1,71 @@
-from data import metal_bands
-import random
+import os
 
-right = []
-wrong = []
-letter = ''
-ATTEMPTS = 5
-
-def get_random_value(list_values):
-    return random.choice(list_values)
-
-def win_condition(word):
-    """
-    Function to check the win condition
-    """
-    if letter == word:
-        return True
-
-    if len(right) == len(word):
-        return True
-
-
-def is_letter(letter):
-    """
-    Function to validate input is a letter
-    """
-    try:
-       int(letter)
-       return False
-    except:
-        if len(letter) > 1:
-            return False
-        else:
-            return True
-    
-
-def is_duplicated(letter):
-    if letter in wrong:
-        return True
-    
-    if letter in right:
-        return True
-    return False
-
-
-def is_special_character(letter):
-    special_characters = "!@#$%^&*()-+?_=,<>/"
-    if any(char in special_characters for char in letter):
-        return True
+def clear_terminal():
+    if os.name == 'nt':
+        os.system('cls')
     else:
-        return False
-
-
-def run():
-    win = False
-    while True:
-        word = get_random_value(metal_bands)
-
-        victory = win_condition(word)
-        if victory:
-            win = True
-            print('You won!', f"Do you like {word}?")
-            break
-            
-        if ATTEMPTS == len(wrong):
-            win = False
-            print('You lose!', f"The band is {word}")
-            break
-
-        letter = input('Type a letter / Word: ').strip()
-
-        if not letter:
-            print('Spaces are not alowed! Please type again')
-            continue
-
-        check_double_letter = is_duplicated(letter)
-        if check_double_letter:
-            print('This letter was alredy used! Please type again')
-            continue
-
-        check_special_character = is_special_character(letter)
-        if check_special_character:
-            print('This is a special character! Please type again')
-            continue
-
-        if str(letter).isnumeric():
-            print('This is a number, type a letter! Please type again')
-            continue
-
-        check_letter = is_letter(letter)
-        if not check_letter and len(letter) == 1:
-            print('This is not a letter! Please type again')
-            continue
-
-        if letter in word:
-            right.append(letter)
-        else:
-            wrong.append(letter)
+        os.system('clear')
         
+def question(message, criteria):
+    msg = ""
+    while True:
+        msg = input(message)
+        if msg in criteria:
+            break
 
-        print('right: ', ", ".join(right))
-        print('wrong: ', ", ".join(wrong))
-
-    return win
+        clear_terminal()
+    return msg
 
 
-run()
+def start_game():
+    return question('Would you like to start the game? Y/N: ', 'yYnN')
+  
+
+def win_game():
+    print('You Won!')
+    return question('Would you like to play againa? Y/N: ', 'yYnN')
+
+def lose_game():
+    print('You Lose!')
+    return question('Would you like to play againa? Y/N: ', 'yYnN')
+
+
+def play_game():
+    msg = ""
+    while True:
+        msg = input('Did you Won or Lose? W/L:')
+        if msg in 'WwlL':
+            break
+    
+    return msg
+
+
+initial = True
+msg = ""
+
+while True:
+    clear_terminal()
+    
+    if initial:
+        msg = start_game()
+
+    if msg in 'nN':
+        break
+    
+    msg = play_game()
+    if msg in 'Ww':
+        msg = win_game()
+        if msg in 'yY':
+            initial = False
+            continue
+        else:
+            initial = True
+
+    else:
+        msg = lose_game()
+        if msg in 'yY':
+            initial = False
+            continue
+        else:
+            initial = True
+            
