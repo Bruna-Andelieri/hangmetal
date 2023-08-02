@@ -6,51 +6,66 @@ def clear_terminal():
     else:
         os.system('clear')
         
-
-def start_game():
-    answer = ""
+def question(message, criteria):
+    msg = ""
     while True:
-        answer = input('Would you like to start the game? Y/N: ')
-        if answer in 'yYnN':
+        msg = input(message)
+        if msg in criteria:
             break
 
         clear_terminal()
-    return answer
-       
+    return msg
+
+
+def start_game():
+    return question('Would you like to start the game? Y/N: ', 'yYnN')
+  
 
 def win_game():
     print('You Won!')
-    anwser = input('Would you like to eplay againa? Y/N: ')
-    if anwser in 'yY':
-        ...
-        
+    return question('Would you like to play againa? Y/N: ', 'yYnN')
 
 def lose_game():
     print('You Lose!')
-    anwser = input('Would you like to eplay againa? Y/N: ')
-    if anwser in 'yY':
-        clear_terminal() 
+    return question('Would you like to play againa? Y/N: ', 'yYnN')
 
 
 def play_game():
-    answer = ""
+    msg = ""
     while True:
-        anwser = input('Did you Won or Lose? W/L:')
-        if anwser in 'WwlL':
+        msg = input('Did you Won or Lose? W/L:')
+        if msg in 'WwlL':
             break
     
-    return answer
+    return msg
 
 
-def main():
-    answer = start_game()
+initial = True
+msg = ""
+
+while True:
     clear_terminal()
-
-    if answer in 'yY':
-        play_game()
-    elif answer in 'nN':
-        start_game()
     
+    if initial:
+        msg = start_game()
 
+    if msg in 'nN':
+        break
+    
+    msg = play_game()
+    if msg in 'Ww':
+        msg = win_game()
+        if msg in 'yY':
+            initial = False
+            continue
+        else:
+            initial = True
 
-main()
+    else:
+        msg = lose_game()
+        if msg in 'yY':
+            initial = False
+            continue
+        else:
+            initial = True
+            
