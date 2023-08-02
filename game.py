@@ -12,7 +12,7 @@ def win_condition(word, letter, right):
     """
     Function to check the win condition
     """
-    if letter == word:
+    if letter.lower() == word.lower():
         return True
 
     if len(right) == len(word):
@@ -56,9 +56,9 @@ def run():
     letter = ''
     win = False
 
-    while True:
-        word = get_random_value(metal_bands)
+    word = "Sepultura"  #  get_random_value(metal_bands)
 
+    while True:
         victory = win_condition(word, letter, right)
         if victory:
             win = True
@@ -95,10 +95,12 @@ def run():
             print('This is not a letter! Please type again')
             continue
 
-        if letter in word:
-            right.append(letter)
+
+
+        if letter.lower() in word.lower():
+            right.append(letter.lower())
         else:
-            wrong.append(letter)
+            wrong.append(letter.lower())
         
 
         print('right: ', ", ".join(right))
@@ -106,5 +108,4 @@ def run():
 
 
     return win
-
 
