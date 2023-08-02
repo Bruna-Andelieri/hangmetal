@@ -34,7 +34,6 @@ def is_letter(letter):
             return True
     
 
-
 def is_duplicated(letter):
     if letter in wrong:
         return True
