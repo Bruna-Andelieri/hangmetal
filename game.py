@@ -1,15 +1,14 @@
 from data import metal_bands
 import random
 
-right = []
-wrong = []
-letter = ''
+
+
 ATTEMPTS = 5
 
 def get_random_value(list_values):
     return random.choice(list_values)
 
-def win_condition(word):
+def win_condition(word, letter, right):
     """
     Function to check the win condition
     """
@@ -34,7 +33,7 @@ def is_letter(letter):
             return True
     
 
-def is_duplicated(letter):
+def is_duplicated(letter, right, wrong):
     if letter in wrong:
         return True
     
@@ -52,11 +51,15 @@ def is_special_character(letter):
 
 
 def run():
+    right = []
+    wrong = []
+    letter = ''
     win = False
+
     while True:
         word = get_random_value(metal_bands)
 
-        victory = win_condition(word)
+        victory = win_condition(word, letter, right)
         if victory:
             win = True
             print('You won!', f"Do you like {word}?")
@@ -73,7 +76,7 @@ def run():
             print('Spaces are not alowed! Please type again')
             continue
 
-        check_double_letter = is_duplicated(letter)
+        check_double_letter = is_duplicated(letter, right, wrong)
         if check_double_letter:
             print('This letter was alredy used! Please type again')
             continue
@@ -101,7 +104,7 @@ def run():
         print('right: ', ", ".join(right))
         print('wrong: ', ", ".join(wrong))
 
+
     return win
 
 
-run()
