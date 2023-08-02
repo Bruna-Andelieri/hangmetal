@@ -66,12 +66,13 @@ def run():
     letter = ''
     win = False
 
-    word = "Sepultura"  #  get_random_value(metal_bands) TODO: remove this
+    word = get_random_value(metal_bands)
     build = "_" * len(word)
 
     while True:
         victory = win_condition(word, letter, build)
         if victory:
+            build = word
             win = True
             print('You won!', f"Do you like {word}?")
             break

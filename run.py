@@ -1,8 +1,6 @@
 import game
 import utils
-
-
-        
+      
 def question(message):
     msg = ""
     while True:
