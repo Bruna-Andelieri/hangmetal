@@ -1,6 +1,7 @@
-from data import metal_bands
 import random
 
+import utils
+from data import metal_bands
 
 
 ATTEMPTS = 5
@@ -8,14 +9,14 @@ ATTEMPTS = 5
 def get_random_value(list_values):
     return random.choice(list_values)
 
-def win_condition(word, letter, right):
+def win_condition(word, letter, build):
     """
     Function to check the win condition
     """
     if letter.lower() == word.lower():
         return True
 
-    if len(right) == len(word):
+    if "".join(build).lower() == word.lower():
         return True
 
 
@@ -49,6 +50,15 @@ def is_special_character(letter):
     else:
         return False
 
+def build_world(letter, word, build):
+    word_as_list = list(build)
+
+    for num, l in enumerate(word):
+        if letter.lower() == l.lower():
+            word_as_list.pop(num)
+            word_as_list.insert(num, letter)
+
+    return word_as_list
 
 def run():
     right = []
@@ -56,10 +66,11 @@ def run():
     letter = ''
     win = False
 
-    word = "Sepultura"  #  get_random_value(metal_bands)
+    word = "Sepultura"  #  get_random_value(metal_bands) TODO: remove this
+    build = "_" * len(word)
 
     while True:
-        victory = win_condition(word, letter, right)
+        victory = win_condition(word, letter, build)
         if victory:
             win = True
             print('You won!', f"Do you like {word}?")
@@ -71,6 +82,7 @@ def run():
             break
 
         letter = input('Type a letter / Word: ').strip()
+        utils.clear_terminal()
 
         if not letter:
             print('Spaces are not alowed! Please type again')
@@ -95,14 +107,15 @@ def run():
             print('This is not a letter! Please type again')
             continue
 
-
-
         if letter.lower() in word.lower():
+            word_as_list = build_world(letter, word, build)
+            build = "".join(word_as_list)
+
             right.append(letter.lower())
         else:
             wrong.append(letter.lower())
         
-
+        print("build:", build)
         print('right: ', ", ".join(right))
         print('wrong: ', ", ".join(wrong))
 

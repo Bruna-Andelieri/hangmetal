@@ -1,11 +1,7 @@
-import os
 import game
+import utils
 
-def clear_terminal():
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
+
         
 def question(message):
     msg = ""
@@ -14,7 +10,7 @@ def question(message):
         if msg in 'yYnN':
             break
 
-        clear_terminal()
+        utils.clear_terminal()
     return msg
 
 
@@ -23,11 +19,9 @@ def start_game():
   
 
 def win_game():
-    print('You Won!')
     return question(message='Would you like to play againa? Y/N: ')
 
 def lose_game():
-    print('You Lose!')
     return question(message='Would you like to play againa? Y/N: ')
 
 
@@ -35,7 +29,7 @@ initial = True
 msg = ""
 
 while True:
-    clear_terminal()
+    utils.clear_terminal()
     
     if initial:
         msg = start_game()
@@ -43,6 +37,7 @@ while True:
     if msg in 'nN':
         break
     
+    utils.clear_terminal()
     result = game.run()
     if result:
         msg = win_game()
