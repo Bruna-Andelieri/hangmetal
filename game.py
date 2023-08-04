@@ -87,26 +87,26 @@ def run():
 
         if not letter:
             print('Spaces are not alowed! Please type again')
-            continue
+            
 
         check_double_letter = is_duplicated(letter, right, wrong)
         if check_double_letter:
             print('This letter was alredy used! Please type again')
-            continue
+            
 
         check_special_character = is_special_character(letter)
         if check_special_character:
             print('This is a special character! Please type again')
-            continue
+            
 
         if str(letter).isnumeric():
             print('This is a number, type a letter! Please type again')
-            continue
+            
 
         check_letter = is_letter(letter)
         if not check_letter and len(letter) == 1:
             print('This is not a letter! Please type again')
-            continue
+            
 
         if letter.lower() in word.lower():
             word_as_list = build_world(letter, word, build)
