@@ -1,10 +1,10 @@
 import random
-
+from hangman import display_hangman
 import utils
 from data import metal_bands
 
 
-ATTEMPTS = 5
+attempts = 6
 
 def get_random_value(list_values):
     return random.choice(list_values)
@@ -65,6 +65,8 @@ def run():
     wrong = []
     letter = ''
     win = False
+    attempts_left = attempts
+    
 
     word = get_random_value(metal_bands)
     build = "_" * len(word)
@@ -77,13 +79,11 @@ def run():
             print('You won!', f"Do you like {word}?")
             break
             
-        if ATTEMPTS == len(wrong):
+        if attempts_left == 0:
             win = False
             print('You lose!', f"The band is {word}")
             break
 
-        letter = input('Type a letter / Word: ').strip()
-        utils.clear_terminal()
 
         if not letter:
             print('Spaces are not alowed! Please type again')
@@ -113,12 +113,19 @@ def run():
             build = "".join(word_as_list)
 
             right.append(letter.lower())
+
         else:
             wrong.append(letter.lower())
+            attempts_left -= 1
+            
         
-        print("build:", build)
+        
+        print(display_hangman(attempts_left))
+        print(build)
         print('right: ', ", ".join(right))
         print('wrong: ', ", ".join(wrong))
+        letter = input('Type a letter / Word: ').strip()
+        utils.clear_terminal()
 
 
     return win

@@ -1,4 +1,4 @@
-def display_hangman(tries):
+def display_hangman(attempts):
     stages = [  # final state: head, torso, both arms, and both legs
                 """
                    --------
@@ -70,4 +70,4 @@ def display_hangman(tries):
                    -
                 """
     ]
-    return stages[tries]
+    return stages[attempts]
