@@ -66,6 +66,34 @@ def message(msg):
     print(msg)
 
 
+def validation(letter, right, wrong):
+    check = True
+    if not letter:
+        message('Spaces are not alowed! Please type again')
+        check = False
+        
+    check_double_letter = is_duplicated(letter, right, wrong)
+    if check_double_letter:
+        message('This letter was alredy used! Please type again')
+        check = False
+        
+    check_special_character = is_special_character(letter)
+    if check_special_character:
+        message('This is a special character! Please type again')
+        check = False    
+
+    if str(letter).isnumeric():
+        message('This is a number, type a letter! Please type again')
+        check = False
+        
+    check_letter = is_letter(letter)
+    if not check_letter and len(letter) == 1:
+        message('This is not a letter! Please type again')
+        check = False
+
+    return check
+            
+
 def run():
     right = []
     wrong = []
@@ -74,7 +102,7 @@ def run():
     attempts_left = attempts
     
 
-    word = "angra"#get_random_value(metal_bands)
+    word = get_random_value(metal_bands)
     build = "_" * len(word)
 
     while True:
@@ -98,34 +126,10 @@ def run():
         letter = input('Type a letter / Word: ').strip()
         utils.clear_terminal()
 
-
-        if not letter:
-            message('Spaces are not alowed! Please type again')
+        check = validation(letter, right, wrong)
+        if not check:
             continue
-                   
-
-        check_double_letter = is_duplicated(letter, right, wrong)
-        if check_double_letter:
-            message('This letter was alredy used! Please type again')
-            continue
-            
-
-        check_special_character = is_special_character(letter)
-        if check_special_character:
-            message('This is a special character! Please type again')
-            continue
-            
-
-        if str(letter).isnumeric():
-            message('This is a number, type a letter! Please type again')
-            continue
-            
-
-        check_letter = is_letter(letter)
-        if not check_letter and len(letter) == 1:
-            message('This is not a letter! Please type again')
-            continue
-            
+        
         if letter:
             if letter.lower() in word.lower():
                 word_as_list = build_world(letter, word, build)
