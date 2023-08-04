@@ -60,6 +60,12 @@ def build_world(letter, word, build):
 
     return word_as_list
 
+
+def message(msg):
+    utils.clear_terminal()
+    print(msg)
+
+
 def run():
     right = []
     wrong = []
@@ -68,7 +74,7 @@ def run():
     attempts_left = attempts
     
 
-    word = get_random_value(metal_bands)
+    word = "angra"#get_random_value(metal_bands)
     build = "_" * len(word)
 
     while True:
@@ -78,55 +84,58 @@ def run():
             win = True
             print('You won!', f"Do you like {word}?")
             break
-            
+
         if attempts_left == 0:
             win = False
             print('You lose!', f"The band is {word}")
             break
 
-
-        if not letter:
-            print('Spaces are not alowed! Please type again')
-            
-
-        check_double_letter = is_duplicated(letter, right, wrong)
-        if check_double_letter:
-            print('This letter was alredy used! Please type again')
-            
-
-        check_special_character = is_special_character(letter)
-        if check_special_character:
-            print('This is a special character! Please type again')
-            
-
-        if str(letter).isnumeric():
-            print('This is a number, type a letter! Please type again')
-            
-
-        check_letter = is_letter(letter)
-        if not check_letter and len(letter) == 1:
-            print('This is not a letter! Please type again')
-            
-
-        if letter.lower() in word.lower():
-            word_as_list = build_world(letter, word, build)
-            build = "".join(word_as_list)
-
-            right.append(letter.lower())
-
-        else:
-            wrong.append(letter.lower())
-            attempts_left -= 1
-            
-        
-        
         print(display_hangman(attempts_left))
-        print(build)
+        print(build)  
         print('right: ', ", ".join(right))
         print('wrong: ', ", ".join(wrong))
+        
         letter = input('Type a letter / Word: ').strip()
         utils.clear_terminal()
 
 
+        if not letter:
+            message('Spaces are not alowed! Please type again')
+            continue
+                   
+
+        check_double_letter = is_duplicated(letter, right, wrong)
+        if check_double_letter:
+            message('This letter was alredy used! Please type again')
+            continue
+            
+
+        check_special_character = is_special_character(letter)
+        if check_special_character:
+            message('This is a special character! Please type again')
+            continue
+            
+
+        if str(letter).isnumeric():
+            message('This is a number, type a letter! Please type again')
+            continue
+            
+
+        check_letter = is_letter(letter)
+        if not check_letter and len(letter) == 1:
+            message('This is not a letter! Please type again')
+            continue
+            
+        if letter:
+            if letter.lower() in word.lower():
+                word_as_list = build_world(letter, word, build)
+                build = "".join(word_as_list)
+                right.append(letter.lower())
+
+            else:
+                wrong.append(letter.lower())
+                attempts_left -= 1
+                
+        
     return win
 
