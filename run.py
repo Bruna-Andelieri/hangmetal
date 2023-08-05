@@ -18,10 +18,11 @@ def start_game():
   
 
 def win_game():
-    return question(message='Would you like to play againa? Y/N: ')
+    return question(message='Would you like to play again? Y/N: ')
 
 def lose_game():
-    return question(message='Would you like to play againa? Y/N: ')
+    animations.lose_game_ascii_art()
+    return question(message='Would you like to play again? Y/N: ')
 
 
 initial = True
@@ -32,6 +33,7 @@ while True:
     
     if initial:
         animations.hangmetal_ascii_art()
+        utils.rules_hangmetal()
         msg = start_game()
 
     if msg in 'nN':
