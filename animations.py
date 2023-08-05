@@ -14,8 +14,7 @@ def hangmetal_ascii_art():
 
     print(hangmetal)
 
-# Call the function to print the ASCII art
-hangmetal_ascii_art()
+
 
 def lose_game_ascii_art():
     lose = """
@@ -48,7 +47,6 @@ $$$$'''$$$$$$$$$$uuu   uu$$$$$$$$$'''$$$
 """
     print(lose)
 
-lose_game_ascii_art()
 
 
 def win_game_ascii_art():
@@ -78,5 +76,3 @@ def win_game_ascii_art():
 
 """
     print(win)
-
-win_game_ascii_art()
