@@ -18,6 +18,7 @@ def start_game():
   
 
 def win_game():
+    animations.win_game_ascii_art()
     return question(message='Would you like to play again? Y/N: ')
 
 def lose_game():
