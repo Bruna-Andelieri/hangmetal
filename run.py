@@ -1,5 +1,6 @@
 import game
 import utils
+import animations
       
 def question(message):
     msg = ""
@@ -30,6 +31,7 @@ while True:
     utils.clear_terminal()
     
     if initial:
+        animations.hangmetal_ascii_art()
         msg = start_game()
 
     if msg in 'nN':
