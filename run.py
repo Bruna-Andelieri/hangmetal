@@ -94,6 +94,7 @@ def main():
         # run game. Returns True if win or False if lose
         result = screen_play_game()
 
+        # show game result
         play_again = show_game_result(result)
 
 main()
