@@ -117,12 +117,14 @@ def run():
             win = False
             print('You lose!', f"The band is {word}")
             break
-
+        print()
         print(display_hangman(attempts_left))
         print(build)  
-        print('right: ', ", ".join(right))
+        #print('right: ', ", ".join(right))
+        print()
         print('wrong: ', ", ".join(wrong))
-        
+        print()
+        print()
         letter = input('Type a letter / Word: ').strip()
         utils.clear_terminal()
 
@@ -133,7 +135,7 @@ def run():
         if letter:
             if letter.lower() in word.lower():
                 word_as_list = build_world(letter, word, build)
-                build = "".join(word_as_list)
+                build = "".join(word_as_list) 
                 right.append(letter.lower())
 
             else:
