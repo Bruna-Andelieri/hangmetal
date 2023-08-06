@@ -130,7 +130,7 @@ def run():
     letter = ""
     win = False
     attempts_left = 6
-    word = "angra"  # get_random_value(metal_bands)
+    word = get_random_value(metal_bands)
     word_built = "_" * len(word)
 
     # This function is used to build the band.
