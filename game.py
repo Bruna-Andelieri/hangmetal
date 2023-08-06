@@ -122,7 +122,7 @@ def run():
         print(build)  
         #print('right: ', ", ".join(right))
         print()
-        print('wrong: ', ", ".join(wrong))
+        print('Incorrectly guessed letters: ', ", ".join(wrong))
         print()
         print()
         letter = input('Type a letter / Word: ').strip()
