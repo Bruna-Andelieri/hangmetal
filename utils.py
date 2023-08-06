@@ -1,5 +1,7 @@
 import os
 
+ROWSIZE = 80
+
 def clear_terminal():
     if os.name == 'nt':
         os.system('cls')
@@ -7,4 +9,11 @@ def clear_terminal():
         os.system('clear')
 
 def rules_hangmetal():
-    print("The computer chooses a random Band! Your goal is to guess which band it is. This game is perfect for testing your knowledge in Metal! Please guess a letter or a word (if you already have an idea what it could be) by typing it on the keyboard and pressing enter. You have 5 attempts to guess the band correctly. If you don't succeed, you can try again.")
+    print()
+    print('                     Guess the hidden Metal band!')
+    print('              The aim of the game is to guess the word')
+    print('                    Please guess a letter or a word')
+    print('            by typing it on the keyboard and pressing enter')
+    print('              You have 5 attempts before the man is hang !')
+    print()
+    print()
