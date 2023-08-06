@@ -5,13 +5,13 @@ import animations
 
 def question(message):
     """
-     Ask the user for a question. It will return the user's input if it is yYnN or yYnN
+    Ask the user for a question. It will return the user's input if it is yYnN or yYnN
     """
     msg = ""
     # input message and try again
     while True:
-        msg = input(message)
-        if msg in 'yYnN':
+        msg = input(f"{message: >54}")
+        if msg in "yYnN":
             break
 
         utils.clear_terminal()
@@ -21,13 +21,13 @@ def question(message):
 
 def screen_start_game():
     """
-     Starts the game and asks the user if he wants to start. 
+    Starts the game and asks the user if he wants to start.
     """
     utils.clear_terminal()
     animations.hangmetal_ascii_art()
     utils.rules_hangmetal()
-    return question(message='Would you like to start the game? Y/N: ')
-  
+    return question(message="Would you like to start the game? Y/N: ")
+
 
 def screen_win_game():
     """
@@ -35,26 +35,26 @@ def screen_win_game():
     """
     utils.clear_terminal()
     animations.win_game_ascii_art()
-    return question(message='Would you like to play again? Y/N: ')
+    return question(message="Would you like to play again? Y/N: ")
+
 
 def screen_lose_game():
     """
     Show screen when user lose the game
     """
 
-    utils.clear_terminal()  
-    animations.lose_game_ascii_art() 
+    utils.clear_terminal()
+    animations.lose_game_ascii_art()
 
-    return question(message='Would you like to play again? Y/N: ')
+    return question(message="Would you like to play again? Y/N: ")
 
 
 def screen_play_game():
     """
-     Show game screen
+    Show game screen
     """
     utils.clear_terminal()
     return game.run()
-
 
 
 def show_game_result(win):
@@ -66,12 +66,12 @@ def show_game_result(win):
     else:
         msg = screen_lose_game()
 
-    if msg in 'yY':
-        play_again = False
+    if msg in "yY":
+        initial = False
     else:
-        play_again = True
+        initial = True
 
-    return play_again
+    return initial
 
 
 def main():
@@ -79,22 +79,22 @@ def main():
     Function to starts the game
     """
 
-    play_again = True
+    initial = True
     msg = ""
-
 
     while True:
         # check if its inital loop. If its true, show the start game screen
-        if play_again:
+        if initial:
             msg = screen_start_game()
 
-        if msg in 'nN':
+        if msg in "nN":
             break
-        
+
         # run game. Returns True if win or False if lose
         result = screen_play_game()
 
         # show game result
-        play_again = show_game_result(result)
+        initial = show_game_result(result)
+
 
 main()

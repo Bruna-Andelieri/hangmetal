@@ -6,8 +6,10 @@ from data import metal_bands
 
 attempts = 6
 
+
 def get_random_value(list_values):
     return random.choice(list_values)
+
 
 def win_condition(word, letter, build):
     """
@@ -25,19 +27,19 @@ def is_letter(letter):
     Function to validate input is a letter
     """
     try:
-       int(letter)
-       return False
+        int(letter)
+        return False
     except:
         if len(letter) > 1:
             return False
         else:
             return True
-    
+
 
 def is_duplicated(letter, right, wrong):
     if letter in wrong:
         return True
-    
+
     if letter in right:
         return True
     return False
@@ -49,6 +51,7 @@ def is_special_character(letter):
         return True
     else:
         return False
+
 
 def build_world(letter, word, build):
     word_as_list = list(build)
@@ -69,38 +72,37 @@ def message(msg):
 def validation(letter, right, wrong):
     check = True
     if not letter:
-        message('Spaces are not alowed! Please type again')
+        message("Spaces are not alowed! Please type again")
         check = False
-        
+
     check_double_letter = is_duplicated(letter, right, wrong)
     if check_double_letter:
-        message('This letter was alredy used! Please type again')
+        message("This letter was alredy used! Please type again")
         check = False
-        
+
     check_special_character = is_special_character(letter)
     if check_special_character:
-        message('This is a special character! Please type again')
-        check = False    
+        message("This is a special character! Please type again")
+        check = False
 
     if str(letter).isnumeric():
-        message('This is a number, type a letter! Please type again')
+        message("This is a number, type a letter! Please type again")
         check = False
-        
+
     check_letter = is_letter(letter)
     if not check_letter and len(letter) == 1:
-        message('This is not a letter! Please type again')
+        message("This is not a letter! Please type again")
         check = False
 
     return check
-            
+
 
 def run():
     right = []
     wrong = []
-    letter = ''
+    letter = ""
     win = False
     attempts_left = attempts
-    
 
     word = get_random_value(metal_bands)
     build = "_" * len(word)
@@ -110,38 +112,35 @@ def run():
         if victory:
             build = word
             win = True
-            print('You won!', f"Do you like {word}?")
+            print("You won!", f"Do you like {word}?")
             break
 
         if attempts_left == 0:
             win = False
-            print('You lose!', f"The band is {word}")
+            print("You lose!", f"The band is {word}")
             break
         print()
         print(display_hangman(attempts_left))
-        print(build)  
-        #print('right: ', ", ".join(right))
+        print(build)
         print()
-        print('Incorrectly guessed letters: ', ", ".join(wrong))
+        print("Incorrectly guessed letters: ", ", ".join(wrong))
         print()
         print()
-        letter = input('Type a letter / Word: ').strip()
+        letter = input("Type a letter / Word: ").strip()
         utils.clear_terminal()
 
         check = validation(letter, right, wrong)
         if not check:
             continue
-        
+
         if letter:
             if letter.lower() in word.lower():
                 word_as_list = build_world(letter, word, build)
-                build = "".join(word_as_list) 
+                build = "".join(word_as_list)
                 right.append(letter.lower())
 
             else:
                 wrong.append(letter.lower())
                 attempts_left -= 1
-                
-        
-    return win
 
+    return win

@@ -1,6 +1,4 @@
-
 def hangmetal_ascii_art():
-  
     hangmetal = """
     
 ██╗  ██╗ █████╗░███╗░░██╗░██████╗░███╗░░░███╗███████╗████████╗░█████╗░██╗
@@ -12,7 +10,6 @@ def hangmetal_ascii_art():
  """
 
     print(hangmetal)
-
 
 
 def lose_game_ascii_art():
@@ -35,9 +32,8 @@ def lose_game_ascii_art():
 
 
 """
-    
-    print(lose)
 
+    print(lose)
 
 
 def win_game_ascii_art():
@@ -61,5 +57,5 @@ def win_game_ascii_art():
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠏⠙⠒⠀⠀⠤⢯⡀⠀⠀⠀⠀⣰⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀   ⣠⣿⡟⠀⠀⠀⢠⠆⠀⡤⠁⠀⠀⠒⢻⡟
 """
-    
+
     print(win)
