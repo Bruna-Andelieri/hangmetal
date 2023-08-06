@@ -3,6 +3,17 @@ import utils
 import animations
 
 
+def rules_hangmetal():
+    print()
+    print("                     Guess the hidden Metal band!")
+    print("              The aim of the game is to guess the word")
+    print("                    Please guess a letter or a word")
+    print("            by typing it on the keyboard and pressing enter")
+    print("              You have 5 attempts before the man is hang !")
+    print()
+    print()
+
+
 def question(message):
     """
     Ask the user for a question. It will return the user's input if it is yYnN or yYnN
@@ -10,7 +21,7 @@ def question(message):
     msg = ""
     # input message and try again
     while True:
-        msg = input(f"{message: >54}")
+        msg = input(f" -> {message}")
         if msg in "yYnN":
             break
 
@@ -25,7 +36,7 @@ def screen_start_game():
     """
     utils.clear_terminal()
     animations.hangmetal_ascii_art()
-    utils.rules_hangmetal()
+    rules_hangmetal()
     return question(message="Would you like to start the game? Y/N: ")
 
 
@@ -33,9 +44,10 @@ def screen_win_game():
     """
     Show screen when user Win the game
     """
-    utils.clear_terminal()
     animations.win_game_ascii_art()
-    return question(message="Would you like to play again? Y/N: ")
+    response = question(message="Would you like to play again? Y/N: ")
+    utils.clear_terminal()
+    return response
 
 
 def screen_lose_game():
@@ -43,10 +55,10 @@ def screen_lose_game():
     Show screen when user lose the game
     """
 
-    utils.clear_terminal()
     animations.lose_game_ascii_art()
-
-    return question(message="Would you like to play again? Y/N: ")
+    response = question(message="Would you like to play again? Y/N: ")
+    utils.clear_terminal()
+    return response
 
 
 def screen_play_game():
