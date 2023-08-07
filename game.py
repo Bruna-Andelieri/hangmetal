@@ -95,30 +95,31 @@ def validation(letter, right, wrong):
     check = True
     # check if spaces are not alowed
     if not letter:
-        message(Fore.LIGHTRED_EX + "Spaces are not alowed! Please type again" + Style.RESET_ALL)
+        message(f"{Fore.LIGHTRED_EX}Spaces are not alowed! Please type again{Style.RESET_ALL}")
         check = False
 
     check_double_letter = is_duplicated(letter, right, wrong)
     # check if the letter is alredy used
     if check_double_letter:
-        message(Fore.LIGHTRED_EX + "This letter was alredy used! Please type again"  + Style.RESET_ALL)
+        message(f"{Fore.LIGHTRED_EX}This letter was alredy used! Please type again{Style.RESET_ALL}")
         check = False
 
     check_special_character = is_special_character(letter)
     # check if special character is a special character
     if check_special_character:
-        message(Fore.LIGHTRED_EX + "This is a special character! Please type again" + Style.RESET_ALL)
+        message(f"{Fore.LIGHTRED_EX}This is a special character! Please type again{Style.RESET_ALL}")
         check = False
 
     # check if the letter is a number
     if str(letter).isnumeric():
-        message(Fore.LIGHTRED_EX + "This is a number, type a letter! Please type again" + Style.RESET_ALL)
+        message(f"{Fore.LIGHTRED_EX}This is a number, type a letter! Please type again{Style.RESET_ALL}")
         check = False
 
     check_letter = is_letter(letter)
     # check if the letter is a letter and size equal to 1
     if not check_letter and len(letter) == 1:
-        message(Fore.LIGHTRED_EX + "This is not a letter! Please type again" + Style.RESET_ALL)
+
+        message(f"{Fore.LIGHTRED_EX}This is not a letter! Please type again{Style.RESET_ALL}")
         check = False
 
     return check
@@ -143,13 +144,13 @@ def run():
         if victory:
             word_built = word
             win = True
-            print(Fore.GREEN + "You won!"+ Style.RESET_ALL, f"Do you like {Fore.MAGENTA + word + Style.RESET_ALL}?")
+            print(f"{Fore.GREEN}You won!{Style.RESET_ALL} Do you like {Fore.CYAN}{word}{Style.RESET_ALL}?")
             break
 
         # If attempts_left 0 print the band is the word.
         if attempts_left == 0:
             win = False
-            print(Fore.RED + "You lose!" + Style.RESET_ALL, f"The band is {Fore.MAGENTA + word + Style.RESET_ALL}")
+            print(f"{Fore.RED}You lose!{Style.RESET_ALL} The band is {Fore.CYAN}{word}{Style.RESET_ALL}?")
             break
 
         print()
