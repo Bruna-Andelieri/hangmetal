@@ -16,7 +16,8 @@ def rules_hangmetal():
 
 def question(message):
     """
-    Ask the user for a question. It will return the user's input if it is yYnN or yYnN
+    Ask the user for a question. It will return the
+    user's input if it is yYnN or yYnN
     """
     msg = ""
     # input message and try again
@@ -108,7 +109,8 @@ def main():
         # show game result
         initial = show_game_result(result)
 
-
     utils.clear_terminal()
     print("Feel free to return whenever you feel prepared!")
+
+
 main()
