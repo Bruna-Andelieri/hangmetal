@@ -15,7 +15,7 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
   + [Main page](#main-page "Main page")
   + [Game Screen](#game-Screen "Game Screen")
   + [Incorrect Attempt](#incorrect-attempt "Incorrect Attempt")
-  + [Communication](#communication "Communication")
+  + [Type Warning](#type-warning "Type warning")
   + [Current User Goals](#current-user-goals "Current User Goals")
   + [New User Goals](#new-user-goals "New User Goals")
 + [Design](#design "Design")
@@ -49,8 +49,13 @@ Here we can see what is occurring if the letter guessed is wrong.
 
 ![incorrect answer](assets/docs/incorrect_answer_screen.jpg)
 
-### Communication:
-The app expresses its intent through the print statements generated, prompting the user to walk through the options available & make their selections. Various statements also print in a variety of colour to help break up the monotony of the white text, making it easier to read.
+### Type warning:
+The system is designed to display an warning message atop the screen whenever the user attempts to input a space, number, or special character, informing them that the input is incorrect. The message prompts the user to re-enter the input accurately.
+![Type warning](assets/docs/warning_msg_special_caracter.jpg)
+ - For numbers:
+![Type warning](assets/docs/warning_msg_number.jpg)
+ - Space
+![Type warning](assets/docs/warning_msg_space.jpg)
 
 ### Current User Goals:
 To keep the user engaged with the app by allowing them a variety of choices, as well as the ability to restart the application for ease of use if they wish to explore an alternative feature.
