@@ -2,6 +2,7 @@ import random
 from hangman import display_hangman
 import utils
 from data import metal_bands
+from colorama import Fore, Style
 
 
 def get_random_value(list_values):
@@ -94,30 +95,30 @@ def validation(letter, right, wrong):
     check = True
     # check if spaces are not alowed
     if not letter:
-        message("Spaces are not alowed! Please type again")
+        message(Fore.LIGHTRED_EX + "Spaces are not alowed! Please type again" + Style.RESET_ALL)
         check = False
 
     check_double_letter = is_duplicated(letter, right, wrong)
     # check if the letter is alredy used
     if check_double_letter:
-        message("This letter was alredy used! Please type again")
+        message(Fore.LIGHTRED_EX + "This letter was alredy used! Please type again"  + Style.RESET_ALL)
         check = False
 
     check_special_character = is_special_character(letter)
     # check if special character is a special character
     if check_special_character:
-        message("This is a special character! Please type again")
+        message(Fore.LIGHTRED_EX + "This is a special character! Please type again" + Style.RESET_ALL)
         check = False
 
     # check if the letter is a number
     if str(letter).isnumeric():
-        message("This is a number, type a letter! Please type again")
+        message(Fore.LIGHTRED_EX + "This is a number, type a letter! Please type again" + Style.RESET_ALL)
         check = False
 
     check_letter = is_letter(letter)
     # check if the letter is a letter and size equal to 1
     if not check_letter and len(letter) == 1:
-        message("This is not a letter! Please type again")
+        message(Fore.LIGHTRED_EX + "This is not a letter! Please type again" + Style.RESET_ALL)
         check = False
 
     return check
@@ -142,20 +143,20 @@ def run():
         if victory:
             word_built = word
             win = True
-            print("You won!", f"Do you like {word}?")
+            print(Fore.GREEN + "You won!"+ Style.RESET_ALL, f"Do you like {Fore.MAGENTA + word + Style.RESET_ALL}?")
             break
 
         # If attempts_left 0 print the band is the word.
         if attempts_left == 0:
             win = False
-            print("You lose!", f"The band is {word}")
+            print(Fore.RED + "You lose!" + Style.RESET_ALL, f"The band is {Fore.MAGENTA + word + Style.RESET_ALL}")
             break
 
         print()
         print(display_hangman(attempts_left))
-        print(word_built)
+        print(Fore.LIGHTMAGENTA_EX + word_built + Style.RESET_ALL)
         print()
-        print("Incorrectly guessed letters: ", ", ".join(wrong))
+        print(Fore.LIGHTYELLOW_EX + "Incorrectly guessed letters: ", ", ".join(wrong) + Style.RESET_ALL)
         print()
         print()
         letter = input("-> Type a letter / Word: ").strip()
