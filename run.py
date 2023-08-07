@@ -109,4 +109,6 @@ def main():
         initial = show_game_result(result)
 
 
+    utils.clear_terminal()
+    print("Feel free to return whenever you feel prepared!")
 main()
