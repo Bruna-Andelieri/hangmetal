@@ -179,7 +179,7 @@ def run():
         print(Fore.LIGHTMAGENTA_EX + word_built + Style.RESET_ALL)
         print()
         print(
-            f"{Fore.LIGHTYELLOW_EX} Incorrectly guessed" +
+            f"{Fore.LIGHTYELLOW_EX} Incorrectly guessed " +
             f"letters: {', '.join(wrong)}{Style.RESET_ALL}"
         )
         print()
