@@ -25,8 +25,6 @@ metal_bands = [
     "Meshuggah",
     "Sabaton",
     "Behemoth",
-    "Anvil",
-    "W.A.S.P.",
     "Stratovarius",
     "Sodom",
     "Mayhem",
@@ -41,7 +39,7 @@ metal_bands = [
     "Kamelot",
     "Bathory",
     "Enslaved",
-    "Cynic",
+    "Sabaton",
     "Satyricon",
     "Nile",
     "Annihilator",
@@ -50,7 +48,7 @@ metal_bands = [
     "Amorphis",
     "Devildriver",
     "Moonspell",
-    "Carnifex",
+    "Ghost",
     "Carcass",
     "Nevermore",
     "Angra",
@@ -69,4 +67,19 @@ metal_bands = [
     "Warbringer",
     "Revocation",
     "Wintersun"
+    "Manowar"
+    "Konstrust"
+    "Saurom"
+    "Alestorm"
+    "Arkona"
+    "Eluveitie"
+    "Faun"
+    "Heilung"
+    "Kalevala"
+    "Korpiklaani"
+    "Manegarm"
+    "Nightwish"
+    "Turisas"
+    "Tyr"
+    "Wardruna"
 ]
