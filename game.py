@@ -29,7 +29,7 @@ def is_letter(letter):
     try:
         int(letter)
         return False
-    except:
+    except ValueError:
         if len(letter) > 1:
             return False
         else:
@@ -54,7 +54,8 @@ def is_special_character(letter):
     Checks if a letter is a special character
     """
     special_characters = "!@#$%^&*()-+?_=,<>/"
-    # Return True if any of the special characters in special_characters are present in the letter.
+    # Return True if any of the special characters in
+    # special_characters are present in the letter.
     if any(char in special_characters for char in letter):
         return True
     else:
@@ -63,7 +64,8 @@ def is_special_character(letter):
 
 def build_word(letter, word, build):
     """
-    Takes a letter and a word and replaces letters in the build that match the letter
+    Takes a letter and a word and replaces letters in
+    the build that match the letter
     """
     word_as_list = list(build)
 
