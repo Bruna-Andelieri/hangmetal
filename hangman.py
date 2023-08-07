@@ -16,7 +16,7 @@ def display_hangman(attempts):
 |      O
 |     \\|/
 |      |
-|     / 
+|     /
 -----------
 """,
         # head, torso, and both arms
@@ -26,7 +26,7 @@ def display_hangman(attempts):
 |      O
 |     \\|/
 |      |
-|      
+|
 -----------
 """,
         # head, torso, and one arm
@@ -36,7 +36,7 @@ def display_hangman(attempts):
 |      O
 |     \\|
 |      |
-|     
+|
 -----------
 """,
         # head and torso
@@ -46,7 +46,7 @@ def display_hangman(attempts):
 |      O
 |      |
 |      |
-|     
+|
 -----------
 """,
         # head
@@ -54,19 +54,19 @@ def display_hangman(attempts):
 --------
 |      |
 |      O
-|    
-|      
-|     
+|
+|
+|
 -----------
 """,
         # initial empty state
         """
 --------
 |      |
-|      
-|    
-|      
-|     
+|
+|
+|
+|
 -----------
 """,
     ]
