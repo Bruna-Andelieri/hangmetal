@@ -20,6 +20,7 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
   + [Win Screen](#win-screen "Win Screen")
   + [Lose Screen](#lose-screen "Lose Screen")
   + [Exit Game](#exit-game "Exit game")
++ [Flow Chart](#flow-chart "Flow Chart")
 + [Testing](#testing "Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
@@ -74,10 +75,14 @@ If the user chooses to discontinue the game by pressing 'n' in response to the p
 ![exit game](assets/docs/out_game.jpg)
 
 
+## Flow Chart
+I utilized [LUCIDCHART](https://www.lucidchart.com/). to design a flowchart that assisted me in both conceptualizing the app's logic and implementing its code.
+![flow chart](assets/docs/flow_chart.jpeg)
+
 
 ## Testing
 
-Kindly be aware that this game is incompatible with mobile devices, as it operates within a mock terminal environment (credits to Code Institute for creating the mock terminal). Consequently, no testing for accessibility or responsiveness has been conducted due to its nature. Your understanding is greatly appreciated.
+Friendly reminder that this game is incompatible with mobile devices, as it operates within a mock terminal environment (credits to Code Institute for creating the mock terminal). Consequently, no testing for accessibility or responsiveness has been conducted due to its nature. Your understanding is greatly appreciated.
 
 
 ### Validator Testing
