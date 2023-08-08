@@ -16,8 +16,10 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
   + [Game Screen](#game-Screen "Game Screen")
   + [Incorrect Attempt](#incorrect-attempt "Incorrect Attempt")
   + [Type Warning](#type-warning "Type warning")
-  + [Current User Goals](#current-user-goals "Current User Goals")
-  + [New User Goals](#new-user-goals "New User Goals")
+  + [Correct Attempt](#correct-attempt "Correct Attempt")
+  + [Win Screen](#win-screen "Win Screen")
+  + [Lose Screen](#lose-screen "Lose Screen")
+  + [Exit Game](#exit-game "Exit game")
 + [Design](#design "Design")
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
@@ -57,14 +59,22 @@ The system is designed to display an warning message atop the screen whenever th
  - Space
 ![Type warning](assets/docs/warning_msg_space.jpg)
 
-### Current User Goals:
-To keep the user engaged with the app by allowing them a variety of choices, as well as the ability to restart the application for ease of use if they wish to explore an alternative feature.
+### Correct Attempt:
+Here we can see what is occurring if the letter guessed is write.
+![correct answer](assets/docs/correct_answer.jpg)
 
-### New User Goals:
-To pick new recipes to try, based on the user ratings provided by the previous user.
+### Win Screen:
+If the user correctly guesses the answers before using up all their attempts, a "Win" display will appear, along with relevant visuals. They can then choose to play again or return to the starting screen.
+![win screen](assets/docs/win_screen.jpg)
 
-### Future Goals:
-To expand the app and allow users to submit their own recipes. As well as to change the way the recipes are generated, allowing the user to determine the cake size they wish to make, and. how many layers they wish to make for it. A comment section that would allow the user to elaborate on their ratings would also help users to interact with the app on a more personal level.
+### Lose Screen:
+If the user guessed all the attempts incorrectly, a "Lose" display will appear, along with relevant visuals and the name of the band. They can then choose to play again or return to the starting screen.
+![lose screen](assets/docs/lose_screen.jpg)
+
+
+### Exit game:
+If the user chooses to discontinue the game by pressing 'n' in response to the prompt, a corresponding message will be displayed.
+![exit game](assets/docs/out_game.jpg)
 
 ## Design
 
@@ -102,18 +112,13 @@ To expand the app and allow users to submit their own recipes. As well as to cha
 - A comments section, that would allow the user to expand on the reason for which they chose their previously inputted rating.
 
 ## Testing
-In trying to create a function to allow the user to select from one of the recipe titles to rate, I was unable to pass in an argument in order to cycle through the list already generated in a previous function. Upon removing the argument, I saw the print statement was being logged to the console twice. I then realised that this was because the function was being called twice. Once through the user input function prompting the user to make a choice, and the second time from the main function. By removing the "submit_rating" function from the main function, I resolved my error message.
 
-A new issue arose when it came to assign those ratings into the appropriate column for the recipe. As I could not discover the method to append a new cell to the end of a single column, I was instead guided by my friend Nick to create a list, so that I could just append an entirely new row to all the columns, inserting empty strings into the cells that did not need to be updated. 
-
-This presented two new issues. One, it affected my ratings calculations. This issue was resolved when Nick showed me how to change the calculations so that empty cells were not factored in. 
-
-And issue two arose when I tried to append the new array to a new row, an error message kept arising. Upon further inspection, I realised the error was that the inputed ratings were being generated into an empty array themselves, and thus I had a list, nested within a list, which led to the errors I was seeing. I resolved this by calling upon the indexed value of the item within the list.
+Kindly be aware that this game is incompatible with mobile devices, as it operates within a mock terminal environment (credits to Code Institute for creating the mock terminal). Consequently, no testing for accessibility or responsiveness has been conducted due to its nature. Your understanding is greatly appreciated.
 
 
 ### Validator Testing
 - The code has been tested by using [PEP8 Online](http://pep8online.com/).
-![PEP8 Validation](assets/images/readme-pep8.png)
+![PEP8 Validation](assets/docs/test_PEP8.jpg)
 
 ### Unfixed Bugs
 
