@@ -24,13 +24,13 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
 + [Testing](#testing "Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
-+ [Technologies Used](#technologies-used "Technologies Used")
++ [Tools and Libraries ](#tools-and-libraries "Tools and Libraries ")
   + [Main Languages Used](#main-languages-used "Main Languages Used")
   + [Programs Used](#programs-used "Programs Used")
 + [Deployment](#deployment "Deployment")
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
-  + [Media](#media "Media")
+  
 
 ## FEATURES
 
@@ -72,6 +72,7 @@ If the user guessed all the attempts incorrectly, a "Lose" display will appear, 
 
 ### Exit game:
 If the user chooses to discontinue the game by pressing 'n' in response to the prompt, a corresponding message will be displayed.
+
 ![exit game](assets/docs/out_game.jpg)
 
 
@@ -95,17 +96,23 @@ Friendly reminder that this game is incompatible with mobile devices, as it oper
 ### Main Languages Used
 - Python
 
-### Programs Used
-- Vs Code - to write, edit code, and execute Git commands via the terminal.
-- GitHub - to store the repository for submission.
-- Lucid - to create the mock up the project.
-- Heroku - to deploy the live version of the terminal
-- Git:
+### Tools and Libraries 
+- `Vs Code`: to write, edit code, and execute Git commands via the terminal.
+- `GitHub`: to store the repository for submission.
+- `Lucid`: to create the mock up the project.
+- `Heroku`: to deploy the live version of the terminal
+- `Git`:
     The code has been successfully pushed to the remote repository on GitHub using the following sequence of Git commands:
 
-    - git add . - This command adds the files that are ready for committing.
-    - git commit -m "message" - Here, the code changes are committed to the local repository, making them ready for the next step.
-    - git push - Finally, this command is used to push the committed code to the remote repository on GitHub. This completes the process of updating the remote repository with your changes.
+    - git add .: This command adds the files that are ready for committing.
+    - git commit -m "message": Here, the code changes are committed to the local repository, making them ready for the next step.
+    - git push: Finally, this command is used to push the committed code to the remote repository on GitHub. This completes the process of updating the remote repository with your changes.
+
+## Libraries
+- `colorama`: used to apply color to the game running in the terminal, used across the code.
+- `os`: used to clear the terminal within clear() function;
+- `sys`: used to exit exit the program within play_again_or_exit() function;
+- `random`: used to generate random number to be guessed in the game within generate_random_number() function;
 
 ## Deployment
 - Steps for deploying the project on Heroku - created for the Code Institute python-essentials-template:
@@ -130,5 +137,8 @@ To ensure proper functionality within the provided template, include the \n meth
 
 ### Content
 
- - [Font Art](https://fsymbols.com/text-art/) used for creat the HANGMETAL.
-
+- [Font Art](https://fsymbols.com/text-art/) used for creat the HANGMETAL.
+- [ASCII ART](https://www.asciiworld.com/) used for the art in animations file.
+- Inspired by this Youtube channels:
+    - [Leonardo Alves](https://www.youtube.com/@LeonardoAlves-wf1tx)
+    - [Kite](https://www.youtube.com/@KiteHQ)
