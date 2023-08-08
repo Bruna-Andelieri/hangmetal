@@ -20,15 +20,12 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
   + [Win Screen](#win-screen "Win Screen")
   + [Lose Screen](#lose-screen "Lose Screen")
   + [Exit Game](#exit-game "Exit game")
-+ [Design](#design "Design")
-+ [Features](#features "Features")
-  + [Existing Features](#existing-features "Existing Features")
 + [Testing](#testing "Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
 + [Technologies Used](#technologies-used "Technologies Used")
   + [Main Languages Used](#main-languages-used "Main Languages Used")
-  + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
+  + [Programs Used](#programs-used "Programs Used")
 + [Deployment](#deployment "Deployment")
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
@@ -76,40 +73,7 @@ If the user guessed all the attempts incorrectly, a "Lose" display will appear, 
 If the user chooses to discontinue the game by pressing 'n' in response to the prompt, a corresponding message will be displayed.
 ![exit game](assets/docs/out_game.jpg)
 
-## Design
 
-### Wireframes:
-![App functionality Wireframe](assets/images/readme-wireframe.png)
-
-## Features
-
-### Existing Features:
-
-#### Landing Page:
-![Landing Page](assets/images/readme-landingpage.png)
-
-#### Retrieve or Rate a Recipe:
-![Rate or Retrieve](assets/images/readme-rate.png)
-
-#### Flavour Selection:
-![Flavour Selection](assets/images/readme-recipe-selection.png)
-
-#### Recipe:
-![Ingredients](assets/images/readme-ingredients.png)
-![Instructions](assets/images/readme-instructions.png)
-
-#### Submit Rating:
-![Submit Rating](assets/images/readme-rate-recipe.png)
-
-#### Restart or Quit app:
-![Restart or Quit](assets/images/readme-quit-restart.png)
-
-### Features Left to Implement
-- Allow users to submit their own recipes.
-- Create a feature to enable a user to increase the recipe size if they wish to make a multi-layered cake, and multiply the recipe based on the number of layers a user has selected.
-- Add an additional feature to then allow the user to also increase the size of the cake tin they are using (e.g. 20cm, 25cm, 30cm etc), and adjust the ingredients list accordingly to accommodate for the increase in batter needed.
-- Add additional recipes to choose from.
-- A comments section, that would allow the user to expand on the reason for which they chose their previously inputted rating.
 
 ## Testing
 
@@ -126,11 +90,17 @@ Kindly be aware that this game is incompatible with mobile devices, as it operat
 ### Main Languages Used
 - Python
 
-### Frameworks, Libraries & Programs Used
-- GitPod - to create my html files & styling sheet before pushing the project to Github.
-- GitHub - to store my repository for submission.
-- Lucid - to create the mock up prior to beginning the project.
+### Programs Used
+- Vs Code - to write, edit code, and execute Git commands via the terminal.
+- GitHub - to store the repository for submission.
+- Lucid - to create the mock up the project.
 - Heroku - to deploy the live version of the terminal
+- Git:
+    The code has been successfully pushed to the remote repository on GitHub using the following sequence of Git commands:
+
+    - git add . - This command adds the files that are ready for committing.
+    - git commit -m "message" - Here, the code changes are committed to the local repository, making them ready for the next step.
+    - git push - Finally, this command is used to push the committed code to the remote repository on GitHub. This completes the process of updating the remote repository with your changes.
 
 ## Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:
