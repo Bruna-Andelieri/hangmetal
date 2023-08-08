@@ -108,28 +108,23 @@ Friendly reminder that this game is incompatible with mobile devices, as it oper
     - git push - Finally, this command is used to push the committed code to the remote repository on GitHub. This completes the process of updating the remote repository with your changes.
 
 ## Deployment
-The site was deployed to Heroku. The steps to deploy are as follows:
-- log in to heroku
-- create a new app
-- navigate to settings
-- add the following KEY/VALUE pairs:
-- - CREDS + copy/paste data from creds.json file
-- - PORT + 8000
-- add build packs (in this order)
-- - Python
-- - nodejs
-- go to GitPod terminal
-- type the following commands into the terminal:
-- - heroku login -i
-- - enter in username + password
-- - heroku apps
-- - heroku git:remote -a my-app-name 
-- - git add .
-- - git commit -m "Deploy to Heroku cia CLI"
-- - git push origin main
-- - git push heroku main
-- The live link can be found [HERE - Layer Cakes](https://layer-cakes.herokuapp.com/)
-- * Site has been depolyed to [Render](https://render.com/), following these [instructions](https://code-institute-students.github.io/deployment-docs/10-pp3/).
+- Steps for deploying the project on Heroku - created for the Code Institute python-essentials-template:
+To ensure proper functionality within the provided template, include the \n method for capturing inputs prior to deployment.
+    - Create a list of dependencies needed for Heroku deployment by using the terminal command pip3 freeze > requirements.txt*. This will add the requirements to the "requirements.txt" file.
+     - Access Heroku, sign in to your account or create a new account if required.
+    - From the Heroku dashboard, click the dropdown labeled "New" and select "Create new app".
+     - In the "App name" field, input the unique app name "hangmetal". Under "Choose a region", select "Europe" and then click "Create app".
+     - Navigate to the "Settings" tab in the top menu.
+     - Scroll down on the next page to "Config Vars" and click "Reveal Config Vars".
+     - In the provided box, replace "KEY" with "CREDS". Access the "creds.json" file, copy its contents, and paste them into the box, replacing "VALUE". Click "Add".(This step it is not mandatory if you don't have nothing on "creds.json").
+     - For the second set of boxes, replace "KEY" with "PORT" and "VALUE" with "8888".
+     - Scroll further down to the "Buildpacks" section and click "Add buildpack".
+        - In the new box, select "python" and click "Add Buildpack". Repeat this action, but this time select "node.js".
+        - Confirm that the buildpacks are in the correct order. Python should be listed first at the top. If necessary, adjust their order by dragging and dropping.
+     - Proceed to the "Deploy" tab in the top menu. Under "Deployment method", choose "GitHub" and click "Connect to GitHub" to establish the connection.
+     - In the "Connect to GitHub" section, search for the repository named "hangmetal". Click "Search", and then select "Connect" to establish the connection.
+     - During the first deployment, scroll down to "Manual deploy" and click "Deploy Branch". This allows you to view the build logs as the app is being constructed.
+     - After the initial deployment, enable "Enable Automatic Deploys" to ensure the app remains up-to-date following each push.
 
 ## Credits
 
