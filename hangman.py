@@ -1,4 +1,13 @@
+"""
+File responsible for maintaining the displayed hangman throughout all attempts.
+
+"""
+
+
 def display_hangman(attempts):
+    """
+    Display the stages of the hangman
+    """
     stages = [  # final state: head, torso, both arms, and both legs
         """
 --------
