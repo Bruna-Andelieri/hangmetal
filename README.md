@@ -87,7 +87,7 @@ Friendly reminder that this game is incompatible with mobile devices, as it oper
 
 
 ### Validator Testing
-- The code has been tested by using [PEP8 Online](http://pep8online.com/).
+- The code has been tested by using [PEP8 Online](https://pep8ci.herokuapp.com/).
 ![PEP8 Validation](assets/docs/test_PEP8.jpg)
 
 ###  Bugs

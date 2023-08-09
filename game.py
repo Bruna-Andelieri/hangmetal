@@ -1,8 +1,17 @@
+"""
+This file is responsible for maintaining the game's logic. 
+Depending on the user's response, it will construct the screen with
+the correct letters or with the hangman drawing. 
+Regardless of the response, it will clear the terminal and redraw again. 
+This file will allow user input, which should be a letter or a word.
+"""
 import random
+
+from colorama import Fore, Style
+
 from hangman import display_hangman
 import utils
 from data import metal_bands
-from colorama import Fore, Style
 
 
 def get_random_value(list_values):
@@ -21,6 +30,7 @@ def win_condition(word, letter, build):
 
     if "".join(build).lower() == word.lower():
         return True
+    return False
 
 
 def is_letter(letter):
@@ -33,8 +43,7 @@ def is_letter(letter):
     except ValueError:
         if len(letter) > 1:
             return False
-        else:
-            return True
+    return True
 
 
 def is_duplicated(letter, right, wrong):
@@ -57,10 +66,7 @@ def is_special_character(letter):
     special_characters = "!@#$%^&*()-+?_=,<>/"
     # Return True if any of the special characters in
     # special_characters are present in the letter.
-    if any(char in special_characters for char in letter):
-        return True
-    else:
-        return False
+    return bool(any(char in special_characters for char in letter))
 
 
 def build_word(letter, word, build):
@@ -71,9 +77,9 @@ def build_word(letter, word, build):
     word_as_list = list(build)
 
     # Add a letter to word_as_list.
-    for num, l in enumerate(word):
+    for num, _letter in enumerate(word):
         # Add letter to word_as_list.
-        if letter.lower() == l.lower():
+        if letter.lower() == _letter.lower():
             word_as_list.pop(num)
             word_as_list.insert(num, letter)
 
@@ -96,8 +102,8 @@ def validation(letter, right, wrong):
     # check if spaces are not alowed
     if not letter:
         message(
-            f"{Fore.LIGHTRED_EX}Spaces are not alowed!" +
-            f"Please type again{Style.RESET_ALL}"
+            f"{Fore.LIGHTRED_EX}Spaces are not alowed!"
+            + f"Please type again{Style.RESET_ALL}"
         )
         check = False
 
@@ -105,8 +111,8 @@ def validation(letter, right, wrong):
     # check if the letter is alredy used
     if check_double_letter:
         message(
-            f"{Fore.LIGHTRED_EX}This letter was alredy used!" +
-            f"Please type again{Style.RESET_ALL}"
+            f"{Fore.LIGHTRED_EX}This letter was alredy used!"
+            + f"Please type again{Style.RESET_ALL}"
         )
         check = False
 
@@ -114,26 +120,25 @@ def validation(letter, right, wrong):
     # check if special character is a special character
     if check_special_character:
         message(
-            f"{Fore.LIGHTRED_EX}This is a special character!" +
-            f"Please type again{Style.RESET_ALL}"
+            f"{Fore.LIGHTRED_EX}This is a special character!"
+            + f"Please type again{Style.RESET_ALL}"
         )
         check = False
 
     # check if the letter is a number
     if str(letter).isnumeric():
         message(
-            f"{Fore.LIGHTRED_EX}This is a number, type a letter!" +
-            f"Please type again{Style.RESET_ALL}"
+            f"{Fore.LIGHTRED_EX}This is a number, type a letter!"
+            + f"Please type again{Style.RESET_ALL}"
         )
         check = False
 
     check_letter = is_letter(letter)
     # check if the letter is a letter and size equal to 1
     if not check_letter and len(letter) == 1:
-
         message(
-            f"{Fore.LIGHTRED_EX}This is not a letter!" +
-            f"Please type again{Style.RESET_ALL}"
+            f"{Fore.LIGHTRED_EX}This is not a letter!"
+            + f"Please type again{Style.RESET_ALL}"
         )
         check = False
 
@@ -160,8 +165,8 @@ def run():
             word_built = word
             win = True
             print(
-                f"{Fore.GREEN}You won!{Style.RESET_ALL}" +
-                f"Do you like {Fore.CYAN}{word}{Style.RESET_ALL}?"
+                f"{Fore.GREEN}You won!{Style.RESET_ALL}"
+                + f"Do you like {Fore.CYAN}{word}{Style.RESET_ALL}?"
             )
             break
 
@@ -169,8 +174,8 @@ def run():
         if attempts_left == 0:
             win = False
             print(
-                f"{Fore.RED}You lose!{Style.RESET_ALL}" +
-                f"The band is {Fore.CYAN}{word}{Style.RESET_ALL}?"
+                f"{Fore.RED}You lose!{Style.RESET_ALL}"
+                + f"The band is {Fore.CYAN}{word}{Style.RESET_ALL}."
             )
             break
 
@@ -179,8 +184,8 @@ def run():
         print(Fore.LIGHTMAGENTA_EX + word_built + Style.RESET_ALL)
         print()
         print(
-            f"{Fore.LIGHTYELLOW_EX} Incorrectly guessed " +
-            f"letters: {', '.join(wrong)}{Style.RESET_ALL}"
+            f"{Fore.LIGHTYELLOW_EX} Incorrectly guessed "
+            + f"letters: {', '.join(wrong)}{Style.RESET_ALL}"
         )
         print()
         print()
