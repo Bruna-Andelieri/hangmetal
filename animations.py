@@ -1,4 +1,12 @@
+"""
+File responsible for maintaining the ASCII art.
+"""
+
+
 def hangmetal_ascii_art():
+    """
+    ASCII art initial screen.
+    """
     hangmetal = """
 ██╗  ██╗ █████╗░███╗░░██╗░██████╗░███╗░░░███╗███████╗████████╗░█████╗░██╗
 ██║░░██║██╔══██╗████╗░██║██╔════╝░████╗░████║██╔════╝╚══██╔══╝██╔══██╗██║
@@ -12,6 +20,9 @@ def hangmetal_ascii_art():
 
 
 def lose_game_ascii_art():
+    """
+    ASCII art lose screen.
+    """
     lose = """
              uu$$$$$$$$$$$uu
           u$$$$$$$$$$$$$$$$$uu
@@ -36,6 +47,9 @@ def lose_game_ascii_art():
 
 
 def win_game_ascii_art():
+    """
+    ASCII art win screen.
+    """
     win = """
              ⣴⠶⢶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
             ⢸⡟⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
