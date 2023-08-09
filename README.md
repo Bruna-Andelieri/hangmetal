@@ -192,6 +192,7 @@ To ensure proper functionality within the provided template, include the \n meth
 
 - [Font Art](https://fsymbols.com/text-art/) used for creat the HANGMETAL.
 - [ASCII ART](https://www.asciiworld.com/) used for the art in animations file.
-- Inspired by this Youtube channels:
+- [Table testing](https://www.tablesgenerator.com/markdown_tables#) used for generate a table for the README.
+- Inspired by these Youtube channels:
     - [Leonardo Alves](https://www.youtube.com/@LeonardoAlves-wf1tx)
     - [Kite](https://www.youtube.com/@KiteHQ)

@@ -16,7 +16,7 @@ def rules_hangmetal():
     print("              The aim of the game is to guess the word")
     print("                    Please guess a letter or a word")
     print("            by typing it on the keyboard and pressing enter")
-    print("              You have 6 attempts before the man is hang !")
+    print("              You have 6 attempts before the man is hung !")
     print()
     print()
 
