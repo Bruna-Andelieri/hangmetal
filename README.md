@@ -5,7 +5,7 @@ Welcome to the captivating world of Hangmetal! Immerse yourself in the realm of 
 With every correct guess, you are close to winning! But be cautious, as each wrong guess brings you nearer to the metalhead's dreaded fate - the hanged man!
 Summon your inner metal aficionado, and embark on this journey through Hangmetal. Every attempt can reveal a band that you don't know and increase your knowledge about this beautiful music genre.
 
-![Site view across devices](assets/docs/responsive.jpg)
+![Site view across devices](assets/docs/mockup.jpg)
 
 The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a0fc16afad72.herokuapp.com/)
 
@@ -25,7 +25,7 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
   + [Functional Testing](#functional-testing "Functional Testing")
 + [Validator](#validator "Validator")
   + [Validator ](#validator "Validator")
-  + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
+  + [Bugs](#bugs "Bugs")
 + [Tools and Libraries ](#tools-and-libraries "Tools and Libraries ")
   + [Main Languages Used](#main-languages-used "Main Languages Used")
   + [Programs Used](#programs-used "Programs Used")
@@ -136,6 +136,11 @@ Friendly reminder that this game is incompatible with mobile devices, as it oper
 ![Pylint Validation](assets/docs/test_utils_pylint.jpg)
 
 ###  Bugs
+  When I deployed the game, I came across a bug in the ASCII art. This issue was not evident during the game's execution within VsCode.
+
+  - For fixing the bug, I had to reduce the size of the ASCII art.
+  ![Bug](assets/docs/bug_ascii_art.jpg)
+
 
 ## Technologies Used
 ### Main Languages Used
