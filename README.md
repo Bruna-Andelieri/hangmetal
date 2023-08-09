@@ -22,6 +22,7 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
   + [Exit Game](#exit-game "Exit game")
 + [Flow Chart](#flow-chart "Flow Chart")
 + [Testing](#testing "Testing")
++ [Validator](#validator "Validator")
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
 + [Tools and Libraries ](#tools-and-libraries "Tools and Libraries ")
@@ -86,9 +87,33 @@ I utilized [LUCIDCHART](https://www.lucidchart.com/). to design a flowchart that
 Friendly reminder that this game is incompatible with mobile devices, as it operates within a mock terminal environment (credits to Code Institute for creating the mock terminal). Consequently, no testing for accessibility or responsiveness has been conducted due to its nature. Your understanding is greatly appreciated.
 
 
-### Validator Testing
-- The code has been tested by using [PEP8 Online](https://pep8ci.herokuapp.com/).
-![PEP8 Validation](assets/docs/test_PEP8.jpg)
+## Validator
+- The code has been validated by [PEP8 Online](https://pep8ci.herokuapp.com/).
+- [Pylint](https://pypi.org/project/pylint/) installed in VsCode.
+
+  - Run.py
+![PEP8 Validation](assets/docs/test_run_PEP8.jpg)
+![Pylint Validation](assets/docs/test_run_pylint.jpg)
+
+  - Game.py
+![PEP8 Validation](assets/docs/test_game_PEP8.jpg)
+![Pylint Validation](assets/docs/test_game_pylint.jpg)
+
+  - Animations.py
+![PEP8 Validation](assets/docs/test_animations_PEP8jpg.jpg)
+![Pylint Validation](assets/docs/test_animations_pylint.jpg)
+
+  - Data.py
+![PEP8 Validation](assets/docs/test_data_PEP8.jpg)
+![Pylint Validation](assets/docs/test_data_pylint.jpg)
+
+  - Hangman.py
+![PEP8 Validation](assets/docs/test_hangman_PEP8.jpg)
+![Pylint Validation](assets/docs/test_hangman_pylint.jpg)
+
+  - Utils.py
+![PEP8 Validation](assets/docs/test_utils_PEP8.jpg)
+![Pylint Validation](assets/docs/test_utils_pylint.jpg)
 
 ###  Bugs
 
