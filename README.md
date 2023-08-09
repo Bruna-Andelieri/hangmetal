@@ -115,6 +115,7 @@ Friendly reminder that this game is incompatible with mobile devices, as it oper
 - `random`: used to generate random number to be guessed in the game within generate_random_number() function;
 
 ## Deployment
+  ### Heroku:
 - Steps for deploying the project on Heroku - created for the Code Institute python-essentials-template:
 To ensure proper functionality within the provided template, include the \n method for capturing inputs prior to deployment.
     - Create a list of dependencies needed for Heroku deployment by using the terminal command pip3 freeze > requirements.txt*. This will add the requirements to the "requirements.txt" file.
@@ -132,6 +133,13 @@ To ensure proper functionality within the provided template, include the \n meth
      - In the "Connect to GitHub" section, search for the repository named "hangmetal". Click "Search", and then select "Connect" to establish the connection.
      - During the first deployment, scroll down to "Manual deploy" and click "Deploy Branch". This allows you to view the build logs as the app is being constructed.
      - After the initial deployment, enable "Enable Automatic Deploys" to ensure the app remains up-to-date following each push.
+
+  ### Local
+  For clonning the project you can log in (or sign up) to GitHub.
+   - Go to the repository for this project, [Hangmetal](https://github.com/Bruna-Andelieri/hangmetal).
+  - Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+  - Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+  - Type 'git clone' into the terminal and then paste the link you copied. Press enter.
 
 ## Credits
 

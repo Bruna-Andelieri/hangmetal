@@ -1,9 +1,16 @@
+"""
+The main file of the game. It controls how the game switches screens.
+"""
+
 import game
 import utils
 import animations
 
 
 def rules_hangmetal():
+    """
+    Show the rules of  the game
+    """
     print()
     print("                     Guess the hidden Metal band!")
     print("              The aim of the game is to guess the word")
@@ -113,4 +120,5 @@ def main():
     print("Feel free to return whenever you feel prepared!")
 
 
-main()
+if __name__ == "__main__":
+    main()
