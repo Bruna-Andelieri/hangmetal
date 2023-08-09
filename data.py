@@ -1,4 +1,8 @@
-metal_bands = [
+"""
+File responsible for storing the game data.
+"""
+
+__metal_bands = [
     "Metallica",
     "Slayer",
     "Megadeth",

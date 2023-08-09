@@ -11,7 +11,7 @@ from colorama import Fore, Style
 
 from hangman import display_hangman
 import utils
-from data import metal_bands
+from data import __metal_bands
 
 
 def get_random_value(list_values):
@@ -154,7 +154,7 @@ def run():
     letter = ""
     win = False
     attempts_left = 6
-    word = get_random_value(metal_bands)
+    word = get_random_value(__metal_bands)
     word_built = "_" * len(word)
 
     # This function is used to build the band.
