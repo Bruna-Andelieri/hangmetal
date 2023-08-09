@@ -22,8 +22,9 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
   + [Exit Game](#exit-game "Exit game")
 + [Flow Chart](#flow-chart "Flow Chart")
 + [Testing](#testing "Testing")
+  + [Functional Testing](#functional-testing "Functional Testing")
 + [Validator](#validator "Validator")
-  + [Validator Testing](#validator-testing "Validator Testing")
+  + [Validator ](#validator "Validator")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
 + [Tools and Libraries ](#tools-and-libraries "Tools and Libraries ")
   + [Main Languages Used](#main-languages-used "Main Languages Used")
@@ -85,6 +86,25 @@ I utilized [LUCIDCHART](https://www.lucidchart.com/). to design a flowchart that
 ## Testing
 
 Friendly reminder that this game is incompatible with mobile devices, as it operates within a mock terminal environment (credits to Code Institute for creating the mock terminal). Consequently, no testing for accessibility or responsiveness has been conducted due to its nature. Your understanding is greatly appreciated.
+
+## Functional Testing
+
+| INPUT                                  | Action                                                                              | Expected                                                                                                        | Result      |
+|----------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|-------------|
+| Would you like to start the game? Y/N: | -user enters "y" + press Enter                                                      | - start the game                                                                                                | as expected |
+|                                        |                                                                                     |                                                                                                                 |             |
+|                                        | -user enters "n" + press Enter                                                      | - exit the game; - show a message                                                                               | as expected |
+|                                        | -user enters a character, number or spaces + press Enter                            | - show an invalid message; - input a new answer again                                                           | as expected |
+|                                        |                                                                                     |                                                                                                                 |             |
+| Type a letter / Word:                  | - user enters a valid letter or a word + press Enter; - is a right guess            | - update letter in word displayed                                                                               | as expected |
+|                                        | - user enters an invalid character, number or spaces + press Enter                  | - show an invalid message; - input a new answer again                                                           | as expected |
+|                                        | - user enters a valid letter or a word + press Enter; -is a wrong guess             | - show in the section labeled "Incorrectly Guessed Letters,"  and reveal a portion of the hangman illustration. | as expected |
+|                                        |                                                                                     |                                                                                                                 |             |
+|                                        | - user enters a correct guesses(letter/word) + press Enter; - less than 6 attempts. | - show a winning message and the name of the band; - display ASCII art.                                         | as expected |
+|                                        | - user enters an incorrect guesses(letter/word) + press Enter; - 6 attempts.        | - show a losing message and the name of the band; - display ASCII art.                                          | as expected |
+| Would you like to play again? Y/N:     | -user enters "y" + enter                                                            | - show the initial screen                                                                                       | as expected |
+|                                        | -user enters "n" + enter                                                            | - show the initial screen                                                                                       | as expected |
+|                                        | -user enters a character, number or spaces + press Enter                            | - show an invalid message; - input a new answer again                                                           |             |
 
 
 ## Validator
