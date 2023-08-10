@@ -52,12 +52,13 @@ Here we can see what is occurring if the letter guessed is wrong.
 
 ### Type warning:
 The system is designed to display an warning message atop the screen whenever the user attempts to input a space, number, or special character, informing them that the input is incorrect. The message prompts the user to re-enter the input accurately.
+
 ![Type warning](assets/docs/warning_msg_special_caracter.jpg)
  - For numbers:
 
 ![Type warning](assets/docs/warning_msg_number.jpg)
  - Space
- 
+
 ![Type warning](assets/docs/warning_msg_space.jpg)
 
 ### Correct Attempt:
