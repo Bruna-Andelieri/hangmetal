@@ -25,10 +25,9 @@ The Hangmetal project is live, the links can be found [HERE](https://hangmetal-a
   + [Functional Testing](#functional-testing "Functional Testing")
 + [Validator](#validator "Validator")
   + [Validator ](#validator "Validator")
-  + [Bugs](#bugs "Bugs")
++ [Bugs](#bugs "Bugs")
 + [Tools and Libraries ](#tools-and-libraries "Tools and Libraries ")
-  + [Main Languages Used](#main-languages-used "Main Languages Used")
-  + [Programs Used](#programs-used "Programs Used")
+  + [Main Languages](#main-languages "Main Language")
 + [Deployment](#deployment "Deployment")
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
@@ -55,8 +54,10 @@ Here we can see what is occurring if the letter guessed is wrong.
 The system is designed to display an warning message atop the screen whenever the user attempts to input a space, number, or special character, informing them that the input is incorrect. The message prompts the user to re-enter the input accurately.
 ![Type warning](assets/docs/warning_msg_special_caracter.jpg)
  - For numbers:
+
 ![Type warning](assets/docs/warning_msg_number.jpg)
  - Space
+ 
 ![Type warning](assets/docs/warning_msg_space.jpg)
 
 ### Correct Attempt:
@@ -143,7 +144,7 @@ Friendly reminder that this game is incompatible with mobile devices, as it oper
 
 
 ## Technologies Used
-### Main Languages Used
+### Main Language
 - Python
 
 ### Tools and Libraries 
